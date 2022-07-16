@@ -43,10 +43,20 @@ const updateBook = (bookObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// FILTER BOOKS ON SALE
+const booksOnSale = (uid) => new Promise((resolve, reject) => {
+  getBooks(uid)
+    .then((userBooks) => {
+      const favBooks = userBooks.filter((book) => book.sale);
+      resolve(favBooks);
+    }).catch((error) => reject(error));
+});
+
 export {
   getBooks,
   createBook,
   deleteBook,
   getSingleBook,
   updateBook,
+  booksOnSale,
 };
