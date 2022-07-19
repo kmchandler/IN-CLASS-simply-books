@@ -10,7 +10,7 @@ function AuthorCard({
   onUpdate, authorObj,
 }) {
   const deleteThisAuthor = () => {
-    if (window.confirm('Delete?')) {
+    if (window.confirm('Delete this author?')) {
       deleteAuthorBooks(authorObj.firebaseKey).then(() => onUpdate());
     }
   };
