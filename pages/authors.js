@@ -8,9 +8,12 @@ import { useAuth } from '../utils/context/authContext';
 export default function Authors() {
   const [authors, setAuthors] = useState([]);
   const { user } = useAuth();
-  useEffect(() => {
+  const getAllTheAuthors = () => {
     getAuthors(user.uid).then(setAuthors);
-  }, [user.uid]);
+  };
+  useEffect(() => {
+    getAllTheAuthors();
+  }, [user]);
   return (
     <div className="text-center my-4">
       <Link href="/author/new" passHref>
@@ -18,7 +21,7 @@ export default function Authors() {
       </Link>
       <div className="d-flex flex-wrap">
         {authors.map((author) => (
-          <AuthorCard key={author.firebaseKey} authorObj={author} />
+          <AuthorCard key={author.firebaseKey} authorObj={author} onUpdate={getAllTheAuthors} />
         ))}
       </div>
     </div>

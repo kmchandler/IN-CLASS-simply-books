@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Link from 'next/link';
-import deleteAuthor from '../api/authorData';
+import { deleteAuthorBooks } from '../api/mergedData';
 
 function AuthorCard({
   onUpdate, authorObj,
 }) {
   const deleteThisAuthor = () => {
-    if (window.confirm(`Delete ${authorObj.first_name}?`)) {
-      deleteAuthor(authorObj.firebaseKey).then(() => onUpdate());
+    if (window.confirm('Delete?')) {
+      deleteAuthorBooks(authorObj.firebaseKey).then(() => onUpdate());
     }
   };
   return (
