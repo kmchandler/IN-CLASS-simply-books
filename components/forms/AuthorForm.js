@@ -51,10 +51,10 @@ function AuthorForm({ obj }) {
         <Form.Control type="text" placeholder="Enter Author's First Name" name="first_name" value={formInput.first_name} onChange={handleChange} required />
       </FloatingLabel>
       <FloatingLabel controlId="floatingInput2" label="Last Name" className="mb-3">
-        <Form.Control type="text" placeholder="Enter Author's Last Name" name="last_name" value={formInput.image} onChange={handleChange} required />
+        <Form.Control type="text" placeholder="Enter Author's Last Name" name="last_name" value={formInput.last_name} onChange={handleChange} required />
       </FloatingLabel>
       <FloatingLabel controlId="floatingInput3" label="email" className="mb-3">
-        <Form.Control type="email" placeholder="Enter Author's email" name="email" value={formInput.price} onChange={handleChange} required />
+        <Form.Control type="email" placeholder="Enter Author's email" name="email" value={formInput.email} onChange={handleChange} required />
       </FloatingLabel>
 
       {/* A WAY TO HANDLE UPDATES FOR TOGGLES, RADIOS, ETC  */}
