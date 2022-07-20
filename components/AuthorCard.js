@@ -20,12 +20,12 @@ function AuthorCard({
         <Card.Title>{authorObj.first_name} {authorObj.last_name}</Card.Title>
         <p className="card-text bold">{authorObj.favorite && <span>FAVORITE<br /></span> }</p>
         <p>{authorObj.email}</p>
-        {/* DYNAMIC LINK TO VIEW THE BOOK DETAILS  */}
-        <Link href={`/book/${authorObj.firebaseKey}`} passHref>
+        {/* DYNAMIC LINK TO VIEW THE AUTHOR DETAILS  */}
+        <Link href={`/authors/${authorObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
-        {/* DYNAMIC LINK TO EDIT THE BOOK DETAILS  */}
-        <Link href={`/book/edit/${authorObj.firebaseKey}`} passHref>
+        {/* DYNAMIC LINK TO EDIT THE AUTHOR DETAILS  */}
+        <Link href={`/authors/edit/${authorObj.firebaseKey}`} passHref>
           <Button variant="info">EDIT</Button>
         </Link>
         <Button variant="danger" onClick={deleteThisAuthor} className="m-2">
